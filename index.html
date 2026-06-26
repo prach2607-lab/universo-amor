@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestro universo 💖</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+color:white;
+text-align:center;
+background: radial-gradient(circle at top, #0b0f2a, #000);
+min-height:100vh;
+}
+
+/* LOGIN */
+#login{
+margin-top:120px;
+background:rgba(255,255,255,0.08);
+display:inline-block;
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+input{
+padding:8px;
+border-radius:8px;
+border:none;
+margin-top:10px;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#4cc9f0;
+color:black;
+font-weight:bold;
+}
+
+/* COSMO */
+#recuerdos{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:50px 40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:15px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.card img{
+width:90px;
+height:90px;
+border-radius:10px;
+object-fit:cover;
+margin-bottom:10px;
+}
+
+#mensajeCentro{
+grid-column:1/4;
+padding:40px;
+font-size:18px;
+background:rgba(0,0,0,0.35);
+border-radius:15px;
+line-height:1.6;
+}
+
+/* COLLAGE */
+#collage{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+padding:50px 40px;
+}
+
+#collage img{
+width:100%;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+/* FINAL */
+#final{
+display:none;
+padding:120px 20px;
+}
+
+#final h1{
+font-size:60px;
+text-shadow:0 0 20px white;
+}
+
+#final p{
+font-size:18px;
+opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- LOGIN -->
+<div id="login">
+<h1>Acceso secreto 💌</h1>
+<input type="password" id="pass">
+<br>
+<button onclick="entrar()">Desplegar 🚀</button>
+</div>
+
+</div>
+
+<script>
+
+function entrar(){
+let pass = document.getElementById("pass").value;
+
+if(pass === "261225" || pass === "26/12/25"){
+mostrarCosmo();
+} else {
+alert("Clave incorrecta 😅");
+}
+}
+
+/* 🌌 COSMO CON FECHAS CORREGIDAS */
+function mostrarCosmo(){
+document.getElementById("app").innerHTML = `
+
+<h1>🌌 Nuestro universo</h1>
+
+<div id="recuerdos">
+
+<div class="card">
+<img src="img/foto1.jpg">
+<p>Recuerdo 1</p>
+<small><b>💖 26/12/25 (aquí inició todo)</b></small>
+</div>
+
+<div class="card">
+<img src="img/foto2.jpg">
+<p>Recuerdo 2</p>
+<small>26/01/26</small>
+</div>
+
+<div class="card">
+<img src="img/foto3.jpg">
+<p>Recuerdo 3</p>
+<small>26/02/26</small>
+</div>
+
+<div class="card">
+<img src="img/foto4.jpg">
+<p>Recuerdo 4</p>
+<small>26/04/26</small>
+</div>
+
+<div class="card">
+<img src="img/foto5.jpg">
+<p>Recuerdo 5</p>
+<small>26/05/26</small>
+</div>
+
+<div class="card">
+<img src="img/foto6.jpg">
+<p>Recuerdo 6</p>
+<small>26/06/26</small>
+</div>
+
+<div id="mensajeCentro">
+Mi amor 💖<br><br>
+
+Esto solo es un pequeño detalle donde verás nuestro recorrido juntos.<br><br>
+
+Te preguntarás: ¿qué son esas fotos?<br>
+Pues son fotos del 26 de cada mes, del espacio cuando cumplíamos meses.<br><br>
+
+Eso refleja lo hermoso que es el universo… tan hermoso como nuestra relación 💫<br><br>
+
+Mi amor, eres lo mejor en este universo, la mejor creación que pudo existir.<br><br>
+
+Y quiero que lo sepas:<br>
+TE AMO DEMASIADO 💖<br><br>
+
+Tanto que el universo se queda finito ante el infinito amor que te tengo 🚀✨
+</div>
+
+</div>
+
+<br>
+<button onclick="mostrarCollage()">Continuar 🌌</button>
+
+`;
+}
+
+/* COLLAGE */
+function mostrarCollage(){
+document.getElementById("app").innerHTML = `
+
+<h1>Momentos juntos 💖</h1>
+
+<div id="collage">
+
+<img src="img/foto7.jpg">
+<img src="img/foto8.jpg">
+<img src="img/foto9.jpg">
+<img src="img/foto10.jpg">
+<img src="img/foto11.jpg">
+<img src="img/foto12.jpg">
+<img src="img/foto13.jpg">
+<img src="img/foto14.jpg">
+<img src="img/foto15.jpg">
+<img src="img/foto16.jpg">
+<img src="img/foto17.jpg">
+
+</div>
+
+<br>
+<button onclick="mostrarFinal()">Final 💖</button>
+
+`;
+}
+
+/* FINAL */
+function mostrarFinal(){
+document.getElementById("app").innerHTML = `
+
+<div id="final">
+<h1>TE AMO TRES MILLONES 💖</h1>
+<p>Y este es solo el inicio de nuestro universo ✨</p>
+</div>
+
+`;
+
+setTimeout(()=>{
+document.getElementById("final").style.display="block";
+},200);
+
+}
+
+</script>
+
+</body>
+</html>
